@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: 
-source: Recetario familiar (foto IMG_3831)
+source: Recetario familiar
+photos: IMG_3831
 added: 2026-10-14
 ---
 

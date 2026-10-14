@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: horno, galletas, betún
-source: Recetario familiar (foto IMG_3822)
+source: Recetario familiar
+photos: IMG_3822
 added: 2026-10-14
 ---
 

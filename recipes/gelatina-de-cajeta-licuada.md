@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: sin horno, gelatina, licuadora
-source: Recetario familiar (foto IMG_3830)
+source: Recetario familiar
+photos: IMG_3830
 added: 2026-10-14
 ---
 

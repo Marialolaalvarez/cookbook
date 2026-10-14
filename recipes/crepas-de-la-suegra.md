@@ -7,8 +7,9 @@ servings:
 difficulty:
 score:
 make_again:
-tags: horno [?], gratinado
-source: Recetario familiar, de la suegra (foto IMG_3834)
+tags: gratinado
+source: Recetario familiar, de la suegra
+photos: IMG_3834
 added: 2026-10-14
 ---
 

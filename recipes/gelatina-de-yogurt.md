@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: sin horno, gelatina
-source: Recetario familiar, receta de Clau (foto IMG_3825)
+source: Recetario familiar, receta de Clau
+photos: IMG_3825
 added: 2026-10-14
 ---
 

@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: olla, frijoles
-source: Recetario familiar (foto IMG_3835)
+source: Recetario familiar
+photos: IMG_3835
 added: 2026-10-14
 ---
 

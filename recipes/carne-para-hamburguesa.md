@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: sartén
-source: Recetario familiar (foto IMG_3843)
+source: Recetario familiar
+photos: IMG_3843
 added: 2026-10-14
 ---
 

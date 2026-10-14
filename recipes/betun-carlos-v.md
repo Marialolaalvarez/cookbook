@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: betún, estufa
-source: Recetario familiar (foto IMG_3829)
+source: Recetario familiar
+photos: IMG_3829
 added: 2026-10-14
 ---
 

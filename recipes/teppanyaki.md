@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: sartén, verduras
-source: Recetario familiar (foto IMG_3833)
+source: Recetario familiar
+photos: IMG_3833
 added: 2026-10-14
 ---
 

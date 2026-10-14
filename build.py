@@ -12,7 +12,7 @@ ROOT = Path(__file__).parent
 SRC = ROOT / "recipes"
 OUT = ROOT / "recipes.js"
 
-LIST_FIELDS = {"tags"}
+LIST_FIELDS = {"tags", "photos"}
 NUMBER_FIELDS = {"time", "servings", "score"}
 
 

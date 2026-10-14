@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: sin horno, gelatina
-source: Recetario familiar (foto IMG_3826)
+source: Recetario familiar
+photos: IMG_3826
 added: 2026-10-14
 ---
 

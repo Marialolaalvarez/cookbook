@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marialola's Cookbook</title>
+<title>Recetario familiar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -29,7 +29,7 @@
   .chip { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 4px 12px; font-size: 13px; cursor: pointer; }
   .chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
   main { max-width: 1100px; margin: 0 auto; padding: 8px 16px 60px; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
-  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; cursor: pointer; text-align: left; font: inherit; color: inherit; transition: transform .12s, box-shadow .12s; }
+  .card { display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; cursor: pointer; text-align: left; font: inherit; color: inherit; transition: transform .12s, box-shadow .12s; }
   .card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.08); }
   .card h2 { font-family: Fraunces, Georgia, serif; font-size: 1.25rem; margin: 6px 0 8px; }
   .cat { text-transform: uppercase; letter-spacing: .06em; font-size: 11px; color: var(--accent); font-weight: 600; }
@@ -44,23 +44,25 @@
   .dlg h3 { font-family: Fraunces, Georgia, serif; margin: 22px 0 6px; }
   .dlg li { margin: 4px 0; }
   .dlg a { color: var(--accent); }
+  .photos { display: grid; gap: 12px; }
+  .photos img { width: 100%; border-radius: 10px; border: 1px solid var(--line); display: block; }
   .close { float: right; border: none; background: none; font-size: 26px; cursor: pointer; color: var(--muted); }
 </style>
 </head>
 <body>
 <header>
-  <h1>Marialola's Cookbook</h1>
+  <h1>Recetario familiar</h1>
   <p class="sub" id="count"></p>
 </header>
 
 <div class="controls">
-  <input type="search" id="q" placeholder="Search recipes or ingredients">
-  <select id="cat"><option value="">All categories</option></select>
+  <input type="search" id="q" placeholder="Buscar receta o ingrediente">
+  <select id="cat"><option value="">Todas las categorías</option></select>
   <select id="sort">
-    <option value="score">Best scored</option>
-    <option value="time">Quickest</option>
+    <option value="score">Mejor calificadas</option>
+    <option value="time">Más rápidas</option>
     <option value="title">A-Z</option>
-    <option value="added">Newest</option>
+    <option value="added">Más recientes</option>
   </select>
 </div>
 <div class="tags" id="tags"></div>
@@ -73,7 +75,7 @@
 const R = window.RECIPES || [];
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const stars = n => n ? "★".repeat(Math.round(n)) + "☆".repeat(5 - Math.round(n)) : "not scored";
+const stars = n => n ? "★".repeat(Math.round(n)) + "☆".repeat(5 - Math.round(n)) : "sin calificar";
 const activeTags = new Set();
 
 [...new Set(R.map(r => r.category).filter(Boolean))].sort()
@@ -86,7 +88,7 @@ const activeTags = new Set();
 });
 
 function metaLine(r) {
-  return [r.time && `${r.time} min`, r.servings && `serves ${r.servings}`, r.difficulty, r.cuisine]
+  return [r.time && `${r.time} min`, r.servings && `para ${r.servings}`, r.difficulty, r.cuisine]
     .filter(Boolean).map(esc).join(" · ");
 }
 
@@ -101,28 +103,30 @@ function render() {
     sort === "time" ? (a.time || 999) - (b.time || 999) :
     sort === "added" ? String(b.added).localeCompare(String(a.added)) :
     a.title.localeCompare(b.title));
-  $("count").textContent = `${R.length} recipe${R.length === 1 ? "" : "s"}`;
+  $("count").textContent = `${R.length} receta${R.length === 1 ? "" : "s"}`;
   $("grid").innerHTML = list.length ? list.map(r => `
     <button class="card" data-id="${esc(r.id)}">
       <div class="cat">${esc(r.category)}</div>
       <h2>${esc(r.title)}</h2>
       <div class="stars">${stars(r.score)}</div>
       <div class="meta">${metaLine(r)}</div>
-      ${r.make_again === "yes" ? '<span class="again">Would make again</span>' : ""}
-    </button>`).join("") : `<p class="empty">${R.length ? "No recipes match." : "No recipes yet."}</p>`;
+      ${["sí", "si", "yes"].includes(String(r.make_again).toLowerCase()) ? '<span class="again">La volvería a hacer</span>' : ""}
+    </button>`).join("") : `<p class="empty">${R.length ? "Ninguna receta coincide." : "Aún no hay recetas."}</p>`;
 }
 
 $("grid").onclick = e => {
   const card = e.target.closest(".card"); if (!card) return;
   const r = R.find(x => x.id === card.dataset.id);
   $("dlgBody").innerHTML = `
-    <button class="close" aria-label="Close" onclick="dlg.close()">×</button>
+    <button class="close" aria-label="Cerrar" onclick="dlg.close()">×</button>
     <div class="cat">${esc(r.category)}</div>
     <h2>${esc(r.title)}</h2>
     <div class="stars">${stars(r.score)}</div>
     <div class="meta">${metaLine(r)}</div>
     ${r.html}
-    ${r.source ? `<p class="meta">Source: ${esc(r.source)}</p>` : ""}`;
+    ${r.source ? `<p class="meta">Fuente: ${esc(r.source)}</p>` : ""}
+    ${(r.photos || []).length ? `<h3>Página original</h3><div class="photos">${r.photos.map(ph =>
+      `<a href="photos/${esc(ph)}.jpg" target="_blank" rel="noopener"><img src="photos/${esc(ph)}.jpg" alt="Página del recetario: ${esc(r.title)}" loading="lazy"></a>`).join("")}</div>` : ""}`;
   $("dlg").showModal();
 };
 $("dlg").onclick = e => { if (e.target.id === "dlg") $("dlg").close(); };

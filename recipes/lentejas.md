@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: olla, licuadora
-source: Recetario familiar (foto IMG_3836)
+source: Recetario familiar
+photos: IMG_3836
 added: 2026-10-14
 ---
 

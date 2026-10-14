@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: sartén, licuadora
-source: Recetario familiar (foto IMG_3841)
+source: Recetario familiar
+photos: IMG_3841
 added: 2026-10-14
 ---
 

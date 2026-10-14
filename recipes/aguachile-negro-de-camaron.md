@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: sin cocción, licuadora, picante
-source: Recetario familiar (foto IMG_3845)
+source: Recetario familiar
+photos: IMG_3845
 added: 2026-10-14
 ---
 

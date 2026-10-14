@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: olla, licuadora, pescado
-source: Recetario familiar (foto IMG_3846, IMG_3847)
+source: Recetario familiar
+photos: IMG_3846, IMG_3847
 added: 2026-10-14
 ---
 

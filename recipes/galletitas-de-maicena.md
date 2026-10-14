@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: horno, galletas
-source: Recetario familiar (foto IMG_3820)
+source: Recetario familiar
+photos: IMG_3820
 added: 2026-10-14
 ---
 

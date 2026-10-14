@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: horno, licuadora
-source: Recetario familiar (foto IMG_3821)
+source: Recetario familiar
+photos: IMG_3821
 added: 2026-10-14
 ---
 

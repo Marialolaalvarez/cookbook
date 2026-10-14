@@ -1,27 +1,28 @@
 ---
-title: Recipe name
-category: main
-cuisine:
+title: Nombre de la receta
+category: postres
+cuisine: mexicana
 time: 30
-servings: 2
-difficulty: easy
+servings: 4
+difficulty: fácil
 score: 4
-make_again: yes
-tags: weeknight, vegetarian
-source:
-added: 2026-10-12
+make_again: sí
+tags: horno, licuadora
+source: Recetario familiar
+photos: IMG_0000
+added: 2026-10-14
 ---
 
-## Ingredients
+## Ingredientes
 
-- 200 g something
-- 1 tbsp something else
+- 200 g de algo
+- 1 cucharada de otra cosa
 
-## Steps
+## Procedimiento
 
-1. First step.
-2. Second step.
+1. Primer paso.
+2. Segundo paso.
 
-## Notes
+## Notas
 
-What I would change next time.
+Lo que cambiaría la próxima vez.

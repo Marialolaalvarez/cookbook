@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: olla, remojo
-source: Recetario familiar, de la abuela (foto IMG_3832)
+source: Recetario familiar, de la abuela
+photos: IMG_3832
 added: 2026-10-14
 ---
 

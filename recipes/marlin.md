@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: sartén, pescado
-source: Recetario familiar (foto IMG_3844)
+source: Recetario familiar
+photos: IMG_3844
 added: 2026-10-14
 ---
 

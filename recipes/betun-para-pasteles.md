@@ -8,7 +8,8 @@ difficulty:
 score:
 make_again:
 tags: betún
-source: Recetario familiar (foto IMG_3823)
+source: Recetario familiar
+photos: IMG_3823
 added: 2026-10-14
 ---
 
