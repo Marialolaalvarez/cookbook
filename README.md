@@ -34,9 +34,9 @@ The site updates about a minute after the push.
 ## One-time GitHub setup
 
 1. Create a free account at github.com (personal email, not work).
-2. Tell git who you are:
-   `git config --global user.name "Your Name"`
-   `git config --global user.email "you@example.com"`
+2. Git identity is set per folder: anything under `~/ML/` uses `~/.gitconfig-personal`
+   (GitHub noreply email, so the personal email never shows in public commits).
+   Check with `git config user.email` from inside this folder.
 3. Install the GitHub command line tool and log in:
    `brew install gh`
    `gh auth login` (choose GitHub.com, HTTPS, log in with a web browser)
