@@ -84,7 +84,7 @@ window.RECIPES = [
  },
  {
   "title": "Betún Carlos V",
-  "category": "betunes",
+  "category": "postres",
   "cuisine": "mexicana",
   "time": null,
   "servings": null,
@@ -105,7 +105,7 @@ window.RECIPES = [
  },
  {
   "title": "Betún para pasteles decorados",
-  "category": "betunes",
+  "category": "postres",
   "cuisine": "mexicana",
   "time": null,
   "servings": null,
@@ -125,7 +125,7 @@ window.RECIPES = [
  },
  {
   "title": "Betún Philadelphia",
-  "category": "betunes",
+  "category": "postres",
   "cuisine": "mexicana",
   "time": null,
   "servings": null,

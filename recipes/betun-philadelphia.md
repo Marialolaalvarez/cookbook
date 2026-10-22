@@ -1,6 +1,6 @@
 ---
 title: Betún Philadelphia
-category: betunes
+category: postres
 cuisine: mexicana
 time:
 servings: 

@@ -1,6 +1,6 @@
 ---
 title: Betún para pasteles decorados
-category: betunes
+category: postres
 cuisine: mexicana
 time:
 servings: 

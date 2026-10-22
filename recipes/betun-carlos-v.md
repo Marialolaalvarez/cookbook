@@ -1,6 +1,6 @@
 ---
 title: Betún Carlos V
-category: betunes
+category: postres
 cuisine: mexicana
 time:
 servings: 

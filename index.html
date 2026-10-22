@@ -161,12 +161,13 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 const unsure = html => html.replaceAll("[?]", '<span class="unsure" title="Lectura dudosa del cuaderno">?</span>');
 
 const PALETTE = ["--rosa", "--naranja", "--amarillo", "--verde", "--turquesa", "--morado", "--azul", "--rojo"];
+const CAT_ORDER = ["entradas", "platos fuertes", "pescados y mariscos", "sopas y caldos", "ensaladas", "postres", "bebidas"];
 const CAT_COLOR = {
-  "postres": "--rosa", "platos fuertes": "--naranja", "sopas y caldos": "--verde",
-  "betunes": "--morado", "bebidas": "--amarillo", "pescados y mariscos": "--azul",
+  "entradas": "--amarillo", "platos fuertes": "--naranja", "pescados y mariscos": "--azul",
+  "sopas y caldos": "--turquesa", "ensaladas": "--verde", "postres": "--rosa", "bebidas": "--morado",
 };
 const DARK_TEXT = new Set(["--amarillo"]);
-const cats = [...new Set(R.map(r => r.category).filter(Boolean))].sort((a, b) => a.localeCompare(b, "es"));
+const cats = CAT_ORDER.concat([...new Set(R.map(r => r.category).filter(c => c && !CAT_ORDER.includes(c)))].sort((a, b) => a.localeCompare(b, "es")));
 cats.forEach((c, i) => { if (!CAT_COLOR[c]) CAT_COLOR[c] = PALETTE[i % PALETTE.length]; });
 const colorOf = r => CAT_COLOR[r.category] || "--rosa";
 const darkCls = r => DARK_TEXT.has(colorOf(r)) ? " dark-text" : "";
@@ -243,7 +244,7 @@ function render() {
       <div class="label${darkCls(r)}"><h2>${esc(r.title)}</h2></div>
       <div class="meta">${stars(r)}${facts(r).length ? `<span>${facts(r).join(" · ")}</span>` : ""}${isAgain(r) ? '<span class="again">La volvería a hacer</span>' : ""}</div>
     </a>`;
-  }).join("") : `<p class="empty">${R.length ? "Ninguna receta coincide" : "Aún no hay recetas"}</p>`;
+  }).join("") : `<p class="empty">${activeCat && !R.some(r => r.category === activeCat) ? `Aún no hay ${esc(activeCat)} en el recetario` : R.length ? "Ninguna receta coincide" : "Aún no hay recetas"}</p>`;
 }
 ["q", "sort"].forEach(id => $(id).addEventListener("input", render));
 
